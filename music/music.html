@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Player UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #121212, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== PLAYER CARD ===== */
+.player {
+    width: 320px;
+    background: #181818;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+    transition: transform 0.3s;
+}
+
+.player:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== ALBUM ART ===== */
+.album-art {
+    width: 100%;
+    height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.album-art:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(30,215,96,0.4);
+}
+
+/* ===== SONG INFO ===== */
+.song-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.song-info h3 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.song-info p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: #1db954;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.progress-container:hover .progress {
+    width: 60%;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 15px 0;
+}
+
+.control-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    background: #1db954;
+    transform: scale(1.1);
+}
+
+/* Play Button */
+.play {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    background: #1db954;
+    color: #000;
+}
+
+.play:hover {
+    background: #1ed760;
+}
+
+/* ===== VOLUME ===== */
+.volume {
+    margin-top: 10px;
+}
+
+.volume label {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.volume-bar {
+    width: 100%;
+    height: 5px;
+    background: #333;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.volume-level {
+    width: 70%;
+    height: 100%;
+    background: #1db954;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.volume-bar:hover .volume-level {
+    width: 90%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="player">
+
+    <div class="album-art">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" alt="Album Art">
+    </div>
+
+    <div class="song-info">
+        <h3>Blinding Lights</h3>
+        <p>The Weeknd</p>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress"></div>
+    </div>
+
+    <div class="controls">
+        <div class="control-btn">⏮</div>
+        <div class="control-btn play">▶</div>
+        <div class="control-btn">⏭</div>
+    </div>
+
+    <div class="volume">
+        <label>Volume</label>
+        <div class="volume-bar">
+            <div class="volume-level"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
